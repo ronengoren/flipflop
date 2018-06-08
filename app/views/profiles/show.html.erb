@@ -1,0 +1,24 @@
+<h1 style="color:red;">Now in: <%= @user_location.neighborhood %></h1> <br>
+<li>
+  <h1><%= @user.email %> | <%= link_to 'send a message', new_personal_message_path(receiver_id: user) %></h1>
+
+</li>
+<h1><%= @user.user_name %></h1>
+<h1><%= @user.sex %></h1>
+<h1><%= @user.country %></h1>
+<h1><%= @user.state %></h1>
+<h1><%= @user.city %></h1>
+<h1><%= @user.one_liner %></h1>
+<h1><%= @user.date_of_birth %></h1>
+<h1><%= @user.height %></h1>
+<img style="width:150px; height:150px;" src="<%= @user.avatar %>">
+
+
+<div id="map-container">
+  <div id="map"></div>
+</div>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_MAPS_API']%>&callback=initMap"></script>
+
+
+<%= @result %>
+

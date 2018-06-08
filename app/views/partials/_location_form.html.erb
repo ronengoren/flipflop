@@ -1,0 +1,10 @@
+
+        <a class="navbar-brand"></a>
+
+  <%= form_for :location, url: url_for(action: 'create') do |f| %>
+      <%= f.hidden_field :user_id, id: 'current_user_id', value:current_user.id if current_user  %>
+      <%= f.hidden_field :zip_code  %>
+      <%= f.hidden_field :neighborhood %>
+      <%= f.submit "Go for a Flip", class: "btn" %>
+    <% end %>
+    </div>

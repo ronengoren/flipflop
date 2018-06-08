@@ -1,0 +1,23 @@
+
+
+<ul>
+  <li><%= link_to 'Home', root_path %></li>
+  <li><%= link_to 'Users', users_path %></li>
+</ul>
+
+<h1>hello world</h1>
+
+<h1>Users</h1>
+
+<ul><%= render @users %></ul>
+
+<div id="map-container">
+  <div id="map"></div>
+</div>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_MAPS_API']%>&callback=initMap"></script>
+
+
+<li>
+  <%= user.name %> | <%= link_to 'send a message', new_personal_message_path(receiver_id: user) %>
+</li>
+

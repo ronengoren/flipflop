@@ -1,0 +1,105 @@
+
+
+
+
+<div id="map-container">
+  <div id="map"></div>
+</div>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_MAPS_API']%>&callback=initMap"></script>
+ 
+
+  
+
+<div class="container">
+  <div class="row">
+	<% @users.each do |card| %>
+    <div class="col-">
+      <div class="flip">
+        <div class="card"> 
+          <div class="face front"> 
+
+            <div class="profile1"><img style="width:100px; height:100px;" src="<%= card.avatar %>"></div>
+          </div> 
+          <div class="face back"><%= image_tag( "logo/flipfloplogo.png", style: 'height:100px;width:100px;') %> <div>
+          </div>
+          </div>
+        </div>	 
+      </div>
+    </div>
+    <% end %>
+	<% @users.shuffle.each do |card| %>
+
+		<div class="col-">
+      <div class="flip">
+        <div class="card"> 
+          <div class="face front"> 
+          
+            <div class="profile1"><img style="width:100px; height:100px;" src="<%= card.avatar %>"></div>
+          </div> 
+          <div class="face back"> <%= image_tag( "logo/flipfloplogo.png", style: 'height:100px;width:100px;') %> <div>
+          </div>
+          </div>
+        </div>	 
+      </div>
+    </div>
+		<% end %>
+  </div>
+</div>	
+<div class="container">
+  <!-- Trigger the modal with a button -->
+
+  <!-- Modal -->
+  <div class="modal" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title">I can't believe you remembered!</h1>
+
+        </div>
+        <div class="modal-body-success">
+           
+        </div>
+         <div class="form_area">
+
+ 
+   
+  
+        <div class="modal-footer">
+          <%= form_for :matching, url: url_for(action: 'create') do |f| %>
+            <%= f.hidden_field :user_id, id: 'current_user_id', value:current_user.id if current_user %>
+            <%= f.hidden_field :paired_user_id, :id => "matching_paired_user_id"  %>
+            <%= f.submit "Close", class: "btn btn-success", "data-dismiss": "modal", id: "btnclose" %>
+          <% end %>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+<div class="container">
+  <!-- Trigger the modal with a button -->
+
+  <!-- Modal -->
+  <div class="modal" id="myModalFail" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"></h4>
+        </div>
+        <div class="modal-body">
+          <h1>Try again :(</h1>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" id="btnclosefail">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
