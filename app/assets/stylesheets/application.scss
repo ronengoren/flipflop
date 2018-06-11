@@ -62,7 +62,15 @@ html {
     border-right: 1px solid #000;
 }
 
-.row {
-    height: 80vh;
-    // margin-top: 40px;
+// .row {
+//     height: 40vh;
+//     // margin-top: 40px;
+// }
+// .col-xs-3 {
+//     margin: 0;
+// }
+.col {
+    padding-right: 0px;
+    padding-left: 0px;
+    flex-grow: 0;
 }
