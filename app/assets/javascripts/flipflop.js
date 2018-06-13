@@ -74,7 +74,26 @@ function getZipCodeAndNeighborhood(zipCode, neighborhood) {
 
 };
 
+function hide() {
+    $('#loading').show();
+    $('#maincontainer').hide();
+    setTimeout(show, 5000);
+
+};
+
+function show() {
+    $(window).ready(function() {
+        $('#loading').hide();
+        $('#maincontainer').show();
+    })
+};
+
+
+
+
+
 $('document').ready(function() {
+    hide();
     $(function() {
         $(".flip").flip({
             axis: "y", // y or x
