@@ -106,7 +106,7 @@ $('document').ready(function() {
         clickEvent()
 
 
-    }, 30000);
+    }, 40000);
 
     $(function() {
         $(".flip").flip({
