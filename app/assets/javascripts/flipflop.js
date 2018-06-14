@@ -102,9 +102,9 @@ $('document').ready(function() {
             speed: 500
         });
 
-        setTimeout(function() {
-            $(".flip").flip(true);
-        }, 15000);
+        // setTimeout(function() {
+        //     $(".flip").flip(true);
+        // }, 15000);
     });
 
     var clickCount = 0
