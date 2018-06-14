@@ -84,6 +84,9 @@ function show() {
     $(window).on('load', function() {
         $('#loading').hide();
         $('#maincontainer').show();
+        setTimeout(function() {
+            $(".flip").flip(true);
+        }, 15000);
     })
 };
 
@@ -92,12 +95,8 @@ function show() {
 
 
 $('document').ready(function() {
-    setTimeout(function() {
-        $(".flip").flip(true);
-    }, 15000);
     hide();
     show();
-
     $(function() {
         $(".flip").flip({
             axis: "y", // y or x
@@ -105,7 +104,9 @@ $('document').ready(function() {
             trigger: "manual", // click, hover or manual
             speed: 500
         });
-
+        setTimeout(function() {
+            $(".flip").flip(true);
+        }, 15000);
 
     });
 
