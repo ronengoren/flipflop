@@ -8,12 +8,12 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_MAPS_API']%>&callback=initMap"></script>
  
 
-  
+<div id="loading" class="loader">Loading...</div>
 
-<div class="container">
+<div class="container" id="maincontainer" style="display:none;">
   <div class="row">
 	<% @users.each do |card| %>
-    <div class="col-">
+    <div class="col">
       <div class="flip">
         <div class="card"> 
           <div class="face front"> 
@@ -29,7 +29,7 @@
     <% end %>
 	<% @users.shuffle.each do |card| %>
 
-		<div class="col-">
+		<div class="col">
       <div class="flip">
         <div class="card"> 
           <div class="face front"> 

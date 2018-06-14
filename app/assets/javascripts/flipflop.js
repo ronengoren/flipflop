@@ -74,7 +74,29 @@ function getZipCodeAndNeighborhood(zipCode, neighborhood) {
 
 };
 
+function hide() {
+    $('#loading').show();
+
+
+};
+
+function show() {
+    $(window).on('load', function() {
+        $('#loading').hide();
+        $('#maincontainer').show();
+        setTimeout(function() {
+            $(".flip").flip(true);
+        }, 15000);
+    })
+};
+
+
+
+
+
 $('document').ready(function() {
+    hide();
+    show();
     $(function() {
         $(".flip").flip({
             axis: "y", // y or x
@@ -82,10 +104,10 @@ $('document').ready(function() {
             trigger: "manual", // click, hover or manual
             speed: 500
         });
-        setTimeout(function() {
-            $(".flip").flip(true);
-        }, 15000);
+
+
     });
+
 
 
     var clickCount = 0

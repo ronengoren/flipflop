@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @user_location = Location.find(params[:id])
+    # @user_location = Location.find(params[:id])
     @result = request.location
     @matching = current_user.matchings.all
 
@@ -22,13 +22,13 @@ class UsersController < ApplicationController
     @location = Location.create(location_params)
     @location.neighborhood = params[:location][:neighborhood]
     @location.zip_code = params[:location][:zip_code]
-    # if @location.save
-    #     redirect_to current_user
-    #   else
-    #     # This line overrides the default rendering behavior, which
-    #     # would have been to render the "create" view.
-    #     redirect_to current_user
-    # end
+    if @location.save
+        redirect_to current_user
+      else
+        # This line overrides the default rendering behavior, which
+        # would have been to render the "create" view.
+        redirect_to current_user
+    end
 
   end
     
