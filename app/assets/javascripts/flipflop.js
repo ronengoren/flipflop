@@ -76,7 +76,7 @@ function getZipCodeAndNeighborhood(zipCode, neighborhood) {
 
 function hide() {
     $('#loading').show();
-    setTimeout(show, 5000);
+    setTimeout(show, 15000);
 
 };
 
