@@ -94,6 +94,9 @@ function show() {
 $('document').ready(function() {
     hide();
     show();
+    setTimeout(function() {
+        $(".flip").flip(true);
+    }, 15000);
     $(function() {
         $(".flip").flip({
             axis: "y", // y or x
@@ -105,9 +108,8 @@ $('document').ready(function() {
 
     });
 
-    setTimeout(function() {
-        $(".flip").flip(true);
-    }, 15000);
+
+
     var clickCount = 0
     var clickCountMax = 2;
 
