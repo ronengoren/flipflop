@@ -92,11 +92,12 @@ function show() {
 
 
 $('document').ready(function() {
-    hide();
-    show();
     setTimeout(function() {
         $(".flip").flip(true);
     }, 15000);
+    hide();
+    show();
+
     $(function() {
         $(".flip").flip({
             axis: "y", // y or x
