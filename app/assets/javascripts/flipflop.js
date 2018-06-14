@@ -104,9 +104,7 @@ $('document').ready(function() {
             trigger: "manual", // click, hover or manual
             speed: 500
         });
-        setTimeout(function() {
-            $(".flip").flip(true);
-        }, 15000);
+
 
     });
 
