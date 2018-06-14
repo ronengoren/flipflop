@@ -76,18 +76,22 @@ function getZipCodeAndNeighborhood(zipCode, neighborhood) {
 
 function hide() {
     $('#loading').show();
-
-
 };
 
 function show() {
     $(window).on('load', function() {
+        console.log("here")
+            // $(".flip").on('click');
         $('#loading').hide();
         $('#maincontainer').show();
         setTimeout(function() {
+            // clickEvent()
+
             $(".flip").flip(true);
         }, 15000);
+
     })
+
 };
 
 
@@ -97,6 +101,12 @@ function show() {
 $('document').ready(function() {
     hide();
     show();
+    setTimeout(function() {
+        clickEvent()
+
+
+    }, 15000);
+
     $(function() {
         $(".flip").flip({
             axis: "y", // y or x
@@ -104,8 +114,6 @@ $('document').ready(function() {
             trigger: "manual", // click, hover or manual
             speed: 500
         });
-
-
     });
 
 
@@ -113,19 +121,23 @@ $('document').ready(function() {
     var clickCount = 0
     var clickCountMax = 2;
 
-    $('.flip').click(function(e) {
-        $(this).find('.card').toggleClass('flipped');
-        click.push($(this).find('img').attr('src'))
-        clickCount++
-        console.log(clickCount)
-        if (clickCount == 2) {
-            $('.flip').off('click');
-            e.preventDefault();
-            check();
-            // game over; code to handle that
-        }
+    function clickEvent() {
+        $('.flip').on('click', function(e) {
+            $(this).click(function(e) {
+                $(this).find('.card').toggleClass('flipped');
+                click.push($(this).find('img').attr('src'))
+                clickCount++
+                console.log(clickCount)
+                if (clickCount == 2) {
+                    $('.flip').off('click');
+                    e.preventDefault();
+                    check();
+                    // game over; code to handle that
+                }
 
-    });
+            });
+        });
+    }
 
 });
 
