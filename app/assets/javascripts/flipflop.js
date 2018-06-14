@@ -76,13 +76,12 @@ function getZipCodeAndNeighborhood(zipCode, neighborhood) {
 
 function hide() {
     $('#loading').show();
-    $('#maincontainer').hide();
     setTimeout(show, 5000);
 
 };
 
 function show() {
-    $(window).ready(function() {
+    $(window).on('load', function() {
         $('#loading').hide();
         $('#maincontainer').show();
     })
@@ -101,11 +100,11 @@ $('document').ready(function() {
             trigger: "manual", // click, hover or manual
             speed: 500
         });
+        show()
         setTimeout(function() {
             $(".flip").flip(true);
         }, 15000);
     });
-
 
     var clickCount = 0
     var clickCountMax = 2;
