@@ -76,7 +76,7 @@ function getZipCodeAndNeighborhood(zipCode, neighborhood) {
 
 function hide() {
     $('#loading').show();
-    setTimeout(show, 15000);
+
 
 };
 
@@ -93,6 +93,7 @@ function show() {
 
 $('document').ready(function() {
     hide();
+    show();
     $(function() {
         $(".flip").flip({
             axis: "y", // y or x
@@ -100,7 +101,7 @@ $('document').ready(function() {
             trigger: "manual", // click, hover or manual
             speed: 500
         });
-        show()
+
         setTimeout(function() {
             $(".flip").flip(true);
         }, 15000);
