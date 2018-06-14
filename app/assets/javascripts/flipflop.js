@@ -88,7 +88,7 @@ function show() {
             // clickEvent()
 
             $(".flip").flip(true);
-        }, 15000);
+        }, 20000);
 
     })
 
@@ -102,10 +102,11 @@ $('document').ready(function() {
     hide();
     show();
     setTimeout(function() {
+        console.log()
         clickEvent()
 
 
-    }, 15000);
+    }, 30000);
 
     $(function() {
         $(".flip").flip({
@@ -122,21 +123,21 @@ $('document').ready(function() {
     var clickCountMax = 2;
 
     function clickEvent() {
-        $('.flip').on('click', function(e) {
-            $(this).click(function(e) {
-                $(this).find('.card').toggleClass('flipped');
-                click.push($(this).find('img').attr('src'))
-                clickCount++
-                console.log(clickCount)
-                if (clickCount == 2) {
-                    $('.flip').off('click');
-                    e.preventDefault();
-                    check();
-                    // game over; code to handle that
-                }
+        $('.flip').click(function(e) {
+            e.preventDefault();
+            $(this).find('.card').toggleClass('flipped');
+            click.push($(this).find('img').attr('src'))
+            clickCount++
+            console.log(clickCount)
+            if (clickCount == 2) {
+                $('.flip').off('click');
+                e.preventDefault();
+                check();
+                // game over; code to handle that
+            }
 
-            });
         });
+
     }
 
 });
