@@ -180,15 +180,19 @@ function check() {
                         .done(console.log)
                         .error(console.log)
                 });
-                $('#myModal').modal({ backdrop: 'static', keyboard: false, show: true });
-                console.log("You have a match!");
+                setTimeout(function() {
+                    $('#myModal').modal({ backdrop: 'static', keyboard: false, show: true });
+                    console.log("You have a match!");
+                }, 1000);
             } else {
                 $("#btnclosefail").on("click", function() {
                     location.reload()
                     console.log('close btn click on fail modal')
                 })
-                $('#myModalFail').modal({ backdrop: 'static', keyboard: false, show: true });
-                console.log('Try again :(');
+                setTimeout(function() {
+                    $('#myModalFail').modal({ backdrop: 'static', keyboard: false, show: true });
+                    console.log('Try again :(');
+                }, 1000);
             }
         }
     }
