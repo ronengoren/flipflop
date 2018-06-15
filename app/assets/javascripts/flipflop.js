@@ -80,18 +80,19 @@ function hide() {
 
 function show() {
     $(window).on('load', function() {
-        console.log("here")
-            // $(".flip").on('click');
+
+        // $(".flip").on('click');
         $('#loading').hide();
         $('#maincontainer').show();
         setTimeout(function() {
             // clickEvent()
 
             $(".flip").flip(true);
+            console.log("here")
         }, 20000);
 
-    })
 
+    })
 };
 
 
@@ -105,6 +106,7 @@ $('document').ready(function() {
         console.log()
         clickEvent()
 
+        console.log("here2")
 
     }, 40000);
 
@@ -123,7 +125,8 @@ $('document').ready(function() {
     var clickCountMax = 2;
 
     function clickEvent() {
-        $('.flip').click(function(e) {
+        $('.flip').on('click', function(e) {
+            $(this).off('click')
             e.preventDefault();
             $(this).find('.card').toggleClass('flipped');
             click.push($(this).find('img').attr('src'))
@@ -141,6 +144,9 @@ $('document').ready(function() {
     }
 
 });
+
+
+
 
 function check() {
     for (i = 0; i < click.length; i++) {

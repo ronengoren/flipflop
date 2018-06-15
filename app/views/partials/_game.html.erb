@@ -14,11 +14,11 @@
   <div class="row">
 	<% @users.each do |card| %>
     <div class="col">
-      <div class="flip" id="flipid">
+      <div class="flip" id="<%= card.id %>">
         <div class="card"> 
           <div class="face front"> 
 
-            <div class="profile1"><img style="width:100px; height:100px;" src="<%= card.avatar %>"></div>
+            <div class="profile1" id="<%= card.id %>"><img style="width:100px; height:100px;" src="<%= card.avatar %>"></div>
           </div> 
           <div class="face back"><%= image_tag( "logo/flipfloplogo.png", style: 'height:100px;width:100px;') %> <div>
           </div>
@@ -30,11 +30,11 @@
 	<% @users.shuffle.each do |card| %>
 
 		<div class="col">
-      <div class="flip">
+      <div class="flip" id="<%= card.id %>">
         <div class="card"> 
           <div class="face front"> 
           
-            <div class="profile1"><img style="width:100px; height:100px;" src="<%= card.avatar %>"></div>
+            <div class="profile1" ><img style="width:100px; height:100px;" src="<%= card.avatar %>"></div>
           </div> 
           <div class="face back"> <%= image_tag( "logo/flipfloplogo.png", style: 'height:100px;width:100px;') %> <div>
           </div>
